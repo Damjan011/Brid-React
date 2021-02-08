@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Win from './components/Win';
 
 const App = () => {
   const [gameInit, setGameInit] = useState(false);
@@ -72,19 +73,6 @@ const App = () => {
           ))
         }
       </div> */}
-damjan
-
-<div>
-  <div className="bakardi">
-    <p>P</p>
-
-    <p>O</p>
-
-    <p>S</p>
-
-    <p>A</p>
-  </div>
-</div>
       {/* <div className={`win-container `}>
         <div className="win-title">
           <p>Bravo!</p>
