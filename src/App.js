@@ -37,6 +37,7 @@ const App = () => {
   }
 
   let fontSize = window.innerWidth / 10;
+  let fontSizeString = fontSize + 'px';
   let randomX = generateRandomPos(5, 0, window.innerWidth, 90);
   let randomY = generateRandomPos(5, 0, window.innerWidth, 180);
 
