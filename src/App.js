@@ -35,21 +35,33 @@ const App = () => {
     return arr;
   }
 
-  let randomX = generateRandomPos(5, 0, window.innerWidth, 90);
-  let randomY = generateRandomPos(5, 0, window.innerHeight, 180);
+  
 
+  //style={animate ? {  left: randomX[index], top: randomY[index] }: {}}
+
+  //console.log(navigator.mediaDevices);
+  //let fontSize;
   useEffect(() => {
+  
+  console.log('jasam max points', navigator.maxTouchPoints);
+  console.log(window.innerWidth, window.innerHeight);
+  
+  console.log(fontSize)
     setTimeout(() => {
       setAnimate(true);
     }, 1000)
   }, []);
 
+  let fontSize = window.innerWidth / 10 + 'px';
+  let randomX = generateRandomPos(5, 0, 8200, 90);
+  let randomY = generateRandomPos(5, 0, 12200, 180);
+
   return (
-    <div className="main-container">
-      <div className={`letters-container ${winner ? 'hidden' : ''}`}>
+    <div style={{fontSize: fontSize, color: 'white'}} className="main-container">
+      {/* <div className={`letters-container`}>
         {
           initArr.map((el, index) => (
-            <div style={animate ? {  left: randomX[index], top: randomY[index] }: {}} onClick={winChecker} className={`letter 
+            <div  onClick={winChecker} className={`letter 
             ${index === 0 ? 'first' : ''}
             ${index === 1 ? 'second' : ''}
             ${index === 2 ? 'third' : ''}
@@ -59,17 +71,29 @@ const App = () => {
             </div>
           ))
         }
-      </div>
+      </div> */}
+damjan
 
-      <div className={`win-container ${!winner ? 'hidden' : ''}`}>
+<div>
+  <div className="bakardi">
+    <p>P</p>
+
+    <p>O</p>
+
+    <p>S</p>
+
+    <p>A</p>
+  </div>
+</div>
+      {/* <div className={`win-container `}>
         <div className="win-title">
           <p>Bravo!</p>
         </div>
 
-        <button onClick={() => setWinner(false)} className="play-again-button">
+        <button  className="play-again-button">
           Play Again
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
