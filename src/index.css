@@ -51,33 +51,3 @@ code {
   left: 50vw;
   position: absolute;
 }
-
-.first {
-  left: calc(50vw - 225px);
-}
-
-.second {
-  left: calc(50vw - 135px);
-}
-
-.third {
-  left: calc(50vw - 45px);
-}
-
-.fourth {
-  left: calc(50vw + 45px);
-}
-
-.fifth {
-  left: calc(50vw + 135px);
-}
-
-.bakardi {
-  display: flex;
-  position: relative;
-}
-
-.bakardi p {
-  position: static;
-  left: 200px;
-}

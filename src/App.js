@@ -36,52 +36,28 @@ const App = () => {
     return arr;
   }
 
-  
+  let fontSize = window.innerWidth / 10;
+  let randomX = generateRandomPos(5, 0, window.innerWidth, 90);
+  let randomY = generateRandomPos(5, 0, window.innerWidth, 180);
 
-  //style={animate ? {  left: randomX[index], top: randomY[index] }: {}}
-
-  //console.log(navigator.mediaDevices);
-  //let fontSize;
   useEffect(() => {
-  
-  console.log('jasam max points', navigator.maxTouchPoints);
-  console.log(window.innerWidth, window.innerHeight);
-  
-  console.log(fontSize)
     setTimeout(() => {
       setAnimate(true);
     }, 1000)
   }, []);
 
-  let fontSize = window.innerWidth / 10 + 'px';
-  let randomX = generateRandomPos(5, 0, 8200, 90);
-  let randomY = generateRandomPos(5, 0, 12200, 180);
-
   return (
-    <div style={{fontSize: fontSize, color: 'white'}} className="main-container">
-      {/* <div className={`letters-container`}>
+    <div style={{ fontSize: fontSize + 'px' }} className="main-container">
+      <div className={`letters-container`}>
         {
           initArr.map((el, index) => (
-            <div  onClick={winChecker} className={`letter 
-            ${index === 0 ? 'first' : ''}
-            ${index === 1 ? 'second' : ''}
-            ${index === 2 ? 'third' : ''}
-            ${index === 3 ? 'fourth' : ''}
-            ${index === 4 ? 'fifth' : ''}`}>
+            <div onClick={winChecker} className="letter" style={ animate ? {left: randomX[index], top: randomY[index]} : {}}>
               {el}
             </div>
           ))
         }
-      </div> */}
-      {/* <div className={`win-container `}>
-        <div className="win-title">
-          <p>Bravo!</p>
-        </div>
-
-        <button  className="play-again-button">
-          Play Again
-        </button>
-      </div> */}
+      </div>
+      <Win winner={winner} setWinner={setWinner} />
     </div>
   );
 }
