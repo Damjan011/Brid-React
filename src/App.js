@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Win from './components/Win';
 
 const App = () => {
   const [gameInit, setGameInit] = useState(false);
@@ -16,6 +15,7 @@ const App = () => {
       if (JSON.stringify(winArr) === JSON.stringify(initArr)) {
         console.log('jestee');
         setWinner(true);
+        setAnimate(false)
       } else {
         setAnimate(false);
         winArr.length = 0
@@ -37,8 +37,12 @@ const App = () => {
   }
 
   let fontSize = window.innerWidth / 10;
-  let randomX = generateRandomPos(5, 0, window.innerWidth, 90);
-  let randomY = generateRandomPos(5, 0, window.innerWidth, 180);
+
+  let letterHeight = fontSize * 1.325;
+  let letterWidth = fontSize * 0.75;
+
+  let randomX = generateRandomPos(5, 0, window.innerWidth, 100);
+  let randomY = generateRandomPos(5, 0, window.innerHeight, 100);
 
   useEffect(() => {
     setTimeout(() => {
@@ -48,16 +52,27 @@ const App = () => {
 
   return (
     <div style={{ fontSize: fontSize + 'px' }} className="main-container">
+      {
+        !winner &&
       <div className={`letters-container`}>
         {
           initArr.map((el, index) => (
-            <div onClick={winChecker} className="letter" style={ animate ? {left: randomX[index], top: randomY[index]} : {}}>
+            <div onClick={winChecker} className="letter" style={animate ? { left: randomX[index], top: randomY[index] } : {}}>
               {el}
             </div>
           ))
         }
       </div>
-      <Win winner={winner} setWinner={setWinner} />
+}
+
+      { winner &&
+        <div className="winner-container">
+          <div className="winner-text">
+            <p>BRAVO</p>
+          </div>
+          <button className="play-again-button" onClick={setWinner(false)}>Igraj Ponovo</button>
+        </div>
+      }
     </div>
   );
 }
