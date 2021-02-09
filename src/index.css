@@ -73,7 +73,6 @@ code {
   justify-content: center;
   transition: all 0.1s ease;
   box-shadow: 5px 5px 3px -1px rgba(2,2,2,0.27);
-  text-shadow: 2px 3px 7px #000000;
 }
 
 .play-again-button:hover {

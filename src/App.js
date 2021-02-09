@@ -38,8 +38,6 @@ const App = () => {
 
   let fontSize = window.innerWidth / 10;
 
-  console.log(fontSize)
-
   let letterHeight = fontSize * 1.325;
   let letterWidth = fontSize * 0.75;
 
