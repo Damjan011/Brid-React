@@ -68,29 +68,14 @@ code {
   border-radius: 10px;
   color: white;
   display: flex;
+  font-size: 20px;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 52px;
   transition: all 0.1s ease;
   box-shadow: 5px 5px 3px -1px rgba(2,2,2,0.27);
   text-shadow: 2px 3px 7px #000000;
-  letter-spacing: 1.5px;
-  z-index: 4;
 }
 
 .play-again-button:hover {
-  font-size: 49px;
   transition: all 0.2s ease;
-}
-
-.play-again-button:active {
-  background: #02bdf7;
-  border-color: white;
-  font-size: 45px;
-  text-shadow: 4px 5px 7px #000000;
-  transition: all 0.1s ease;
-  outline: none;
-  box-shadow: none;
 }
