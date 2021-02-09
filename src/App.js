@@ -38,11 +38,15 @@ const App = () => {
 
   let fontSize = window.innerWidth / 10;
 
+  console.log(fontSize)
+
   let letterHeight = fontSize * 1.325;
   let letterWidth = fontSize * 0.75;
 
-  let randomX = generateRandomPos(5, 0, window.innerWidth, 100);
-  let randomY = generateRandomPos(5, 0, window.innerHeight, 100);
+  console.log(letterHeight, letterWidth)
+
+  let randomX = generateRandomPos(5, 0, window.innerWidth, letterWidth);
+  let randomY = generateRandomPos(5, 0, window.innerHeight, letterHeight);
 
   useEffect(() => {
     setTimeout(() => {
